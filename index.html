@@ -3,7 +3,7 @@
 
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
@@ -14,12 +14,32 @@
 
 <body>
     <header>
-        Weather Dashboard
+        <div>Weather Dashboard</div>
     </header>
 
-    <script src="script.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q==" crossorigin="anonymous"></script>
+    <main>
+        <form class="box nextto">
+            Search for a City
+            <div> <br>
+                <input type="text " name="city search " id="city search " placeholder="Type city name here "> <br>
+                <button class="waves-effect waves-light btn " type="submit " name="action "><i class="material-icons left ">cloud</i>Search</button>
+
+            </div>
+        </form>
+
+        <section id="weather-report" class="box nextto">
+            Return City Weather Report
+        </section>
+
+        <section id="forecast" class="box">
+            5-Day Forecast
+        </section>
+    </main>
+
+    <script src=" script.js "></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js "></script>
+    <script type="text/javascript " src="js/materialize.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js " integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q==" crossorigin=" anonymous "></script>
 </body>
 
 </html>
