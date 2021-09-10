@@ -1,0 +1,22 @@
+{
+    "name": "06-homework-server-side-apis",
+    "version": "1.0.0",
+    "description": "Weather Dashboard",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GPLOTKE/06-Homework-Server-Side-APIs.git"
+    },
+    "author": "Gerald Plotke",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/GPLOTKE/06-Homework-Server-Side-APIs/issues"
+    },
+    "homepage": "https://github.com/GPLOTKE/06-Homework-Server-Side-APIs#readme",
+    "dependencies": {
+        "writemereadme": "^1.5.0"
+    }
+}
