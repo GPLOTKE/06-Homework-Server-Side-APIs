@@ -46,3 +46,30 @@ searchBtn.addEventListener("click", () => {
         ui.saveToLocal(data);
     });
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+    const dataSaved = ui.getFromLocal();
+    ui.generateHtml(dataSaved);
+});
+
+clearHtml(); {
+    currentContainer.innerHTML = "";
+}
+
+saveToLocal(data); {
+    localStorage.setItem("city", JSON.stringify(data));
+}
+
+getFromLocal(); {
+    if (localStorage.getItem("city" == null)) {
+        return this.defaultCity;
+    } else {
+        this.city = JSON.parse(localStorage.getItem("city"));
+    }
+
+    return this.city;
+}
+
+// clearLocal(); {
+//     localStorage.clear();
+// }
