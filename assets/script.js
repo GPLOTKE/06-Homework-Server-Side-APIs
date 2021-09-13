@@ -16,3 +16,21 @@ class Fetch {
         return data;
     }
 }
+
+class UI {
+    constructor() {
+        this.currentContainer = document.getElementById("current-container");
+        this.city;
+    }
+
+    generateHtml(data) {
+        this.currentContainer.innerHTML = `
+        
+        <div>
+            <div>
+                <h5>${data.name}</h5>
+                <h6>High of ${data.main.temp_max}. Low of ${data.main.temp_min}</h6>
+            </div>
+        </div>`;
+    }
+}
