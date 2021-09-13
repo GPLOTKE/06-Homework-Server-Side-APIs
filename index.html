@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <script defer src="./assets/js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <main>
+        <div class="box nextto">
+            <form id="weather-form">
+                <label for="cityInput">Search for a City:</label>
+                <input type="text" name="cityInput" id="input" placeholder="Type city name here" /> <br>
+                <button class="waves-effect waves-light btn" id="searchBtn" type="button" name="action"><i class="material-icons left">cloud</i>Search</button>
+            </form>
+        </div>
+        <div class="box">
+            <h2>Searched Cities</h2>
+            <div id="city-list">
+
+            </div>
+        </div>
+        <div id="weather-report" class="box nextto">
+            <h2>Current Weather Report</h2>
+            <div id="current-container"></div>
+        </div>
+        <section id="forecast" class="box">
+            5-Day Forecast
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q==" crossorigin="anonymous"></script>
+</body>
+
+</html>
