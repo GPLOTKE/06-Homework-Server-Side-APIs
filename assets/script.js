@@ -1,46 +1,18 @@
-var searchBtnEl = document.querySelector("#enterBtn");
-var cityInput = document.querySelector("#city-input");
-var cityListEl = document.querySelectorAll('#city-list');
-var weatherFormEl = document.querySelectorAll('#weather-form');
+// var searchBtn = document.querySelector("#search-btn");
+// var cityInput = document.querySelector("#city-input");
+// var cityListEl = document.querySelectorAll("#city-list");
+// var weatherForm = document.querySelectorAll("#weather-form");
+// var currentWeatherEl = document.querySelector("#current-container");
+// var searchedCity = "";
 
-function showCityList(event) {
-    event.preventDefault();
-
-    var cityItem = querySelectorAll('input[name="city-input"]').value();
-
-    if (!cityItem) {
-        console.log('No city was entered!');
-        return;
+class Fetch {
+    async fetchCurrent(cityInput) {
+        const apiKey = "41ea287d4912f0b2e0fa6621fbca8b89"
+        const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}`
+        );
+        const data = await response.json();
+        console.log(data);
+        return data;
     }
-
-    cityListEl.append('<li>' + cityItem + '</li>');
-
-    querySelectorAll('input[name="city-input"]').val('');
 }
-
-function listCities(event) {
-    event.preventDefault();
-    console.log(event);
-    var list = "cityInput.value";
-    cityListEl.textContent = list;
-}
-searchBtnEl.addEventListener('click', showCityList);
-
-
-function handleSearchFormSubmit(event) {
-    event.preventDefault();
-
-    var searchInputVal = document.querySelector('#city-input').value;
-
-
-    if (!searchInputVal) {
-        console.error('You need a search input value!');
-        return;
-    }
-
-    var queryString = './search-results.html?q=' + searchInputVal + '&format=' + formatInputVal;
-
-    location.assign(queryString);
-}
-
-weatherFormEl.addEventListener('submit', handleSearchFormSubmit);

@@ -11,6 +11,10 @@ input {
     display: block;
 }
 
+label {
+    font-size: 30px;
+}
+
 .nextto {
     display: inline-block;
 }
@@ -23,13 +27,23 @@ input {
     border: 5px solid black;
 }
 
-#weather-report {
-    /* position: absolute; */
-}
 
-#forecast {
-    /* position: absolute; */
-}
+/* #weather-report { */
+
+
+/* position: absolute; */
+
+
+/* } */
+
+
+/* #forecast { */
+
+
+/* position: absolute; */
+
+
+/* } */
 
 
 /* ul {
