@@ -3,10 +3,15 @@ const searchBtn = document.querySelector("#searchBtn");
 let cityInput = $('#input')
 let labelIndex = 0;
 
+window.onload = () => {
+    checkIt()
+}
+
 function checkIt() {
     if (localStorage.length > -1) {
         for (let i = 0; i < localStorage.length; i++) {
             let index = i + 1
+            console.log({ index })
             let recCity = localStorage.getItem(`Recent Search ${index}`)
             console.log({ recCity })
             const cityCardHtml =
@@ -22,10 +27,11 @@ const appendUI = async(data) => {
     if (labelIndex <= 5) {
         localStorage.setItem('Recent Search ' + labelIndex, cityInput.val());
     } else {
-        labelIndex = 0;
+        labelIndex = 1;
         localStorage.setItem('Recent Search ' + labelIndex, cityInput.val());
     }
     cityInput.val('')
+    checkIt()
 
     let results = await data
     console.log('APPENDUI DATA:', results)
@@ -44,16 +50,15 @@ const appendUI = async(data) => {
 
 const getWeather = () => {
 
-    checkIt()
+
     $('#current-container').children().remove('.currentWeather')
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityInput.val()}&units=imperial&appid=${apiKey}`)
         .then((response) => {
             if (response.ok) {
-
                 if (labelIndex < 5) {
                     labelIndex++
                 } else if (labelIndex == 5) {
-                    labelIndex = 0
+                    labelIndex = 1
                 }
                 let data = response.json()
                 appendUI(data)
