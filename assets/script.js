@@ -1,5 +1,5 @@
-// var searchBtn = document.querySelector("#search-btn");
-// var cityInput = document.querySelector("#city-input");
+var searchBtn = document.querySelector("#search-btn");
+var cityInput = document.querySelector("#city-input");
 // var cityListEl = document.querySelectorAll("#city-list");
 // var weatherForm = document.querySelectorAll("#weather-form");
 // var currentWeatherEl = document.querySelector("#current-container");
@@ -34,3 +34,15 @@ class UI {
         </div>`;
     }
 }
+
+const fetch = new Fetch();
+const ui = new UI();
+
+searchBtn.addEventListener("click", () => {
+    const currentVal = search.value;
+
+    fetch.getCurrent(currentVal).then((data) => {
+        ui.generateHtml(data);
+        ui.saveToLocal(data);
+    });
+});
