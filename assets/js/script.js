@@ -25,6 +25,7 @@ const appendUI = async(data) => {
         labelIndex = 0;
         localStorage.setItem('Recent Search ' + labelIndex, cityInput.val());
     }
+    cityInput.val('')
 
     let results = await data
     console.log('APPENDUI DATA:', results)
@@ -42,11 +43,13 @@ const appendUI = async(data) => {
 }
 
 const getWeather = () => {
+
     checkIt()
     $('#current-container').children().remove('.currentWeather')
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityInput.val()}&units=imperial&appid=${apiKey}`)
         .then((response) => {
             if (response.ok) {
+
                 if (labelIndex < 5) {
                     labelIndex++
                 } else if (labelIndex == 5) {
@@ -65,6 +68,7 @@ const getWeather = () => {
 searchBtn.addEventListener("click", () => {
     $('#city-list').children().remove()
     console.log(`Fetching Weather Boss.`)
+
     getWeather()
 
 })
