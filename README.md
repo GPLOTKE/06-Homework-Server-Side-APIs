@@ -63,7 +63,7 @@
 
 Deployed application:
 
-https://gplotke.github.io/06-Homework-Server-Side-APIs/
+https://gplotke.github.io/06-Weather-Dashboard/
 
 GitHub repository:
 
